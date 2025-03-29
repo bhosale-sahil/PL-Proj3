@@ -7,7 +7,11 @@ public class AutomatonImpl implements Automaton {
     class StateLabelPair {
         int state;
         char label;
-        public StateLabelPair(int state_, char label_) { state = state_; label = label_; }
+
+        public StateLabelPair(int state_, char label_) {
+            state = state_;
+            label = label_;
+        }
 
         @Override
         public int hashCode() {
@@ -42,7 +46,6 @@ public class AutomatonImpl implements Automaton {
             accept_states.add(s);
         }
 
-        // throw new UnsupportedOperationException("Unimplemented method 'addState'");
     }
 
     @Override
@@ -50,15 +53,13 @@ public class AutomatonImpl implements Automaton {
         StateLabelPair key = new StateLabelPair(s_initial, label);
         transitions.putIfAbsent(key, new HashSet<>());
         transitions.get(key).add(s_final);
-      
-        // throw new UnsupportedOperationException("Unimplemented method 'addTransition'");
+
     }
 
     @Override
     public void reset() {
         current_states = new HashSet<>(start_states);
-        
-        // throw new UnsupportedOperationException("Unimplemented method 'reset'");
+
     }
 
     @Override
@@ -71,8 +72,7 @@ public class AutomatonImpl implements Automaton {
             }
         }
         current_states = next_states;
-   
-        // throw new UnsupportedOperationException("Unimplemented method 'apply'");
+
     }
 
     @Override
@@ -83,8 +83,7 @@ public class AutomatonImpl implements Automaton {
             }
         }
         return false;
-        
-        // throw new UnsupportedOperationException("Unimplemented method 'accepts'");
+
     }
 
     @Override
@@ -97,9 +96,6 @@ public class AutomatonImpl implements Automaton {
         }
         return false;
 
-        
-        // throw new UnsupportedOperationException("Unimplemented method 'hasTransitions'");
     }
 
 }
-
